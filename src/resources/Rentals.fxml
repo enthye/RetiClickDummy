@@ -11,7 +11,7 @@
       <Button fx:id="deleteButton" layoutX="125.0" layoutY="348.0" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="37.0" prefWidth="100.0" text="Delete" />
       <Button fx:id="searchButton" layoutX="237.0" layoutY="348.0" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="37.0" prefWidth="100.0" text="Search" />
       <Button fx:id="backButton" layoutX="480.0" layoutY="348.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="37.0" prefWidth="100.0" text="Back" />
-      <TableView fx:id="tableView" layoutX="25.0" layoutY="14.0" prefHeight="317.0" prefWidth="549.0">
+      <TableView fx:id="tableView" layoutX="25.0" layoutY="14.0" prefHeight="322.0" prefWidth="549.0">
          <columns>
             <TableColumn prefWidth="75.0" text="Start Date" />
             <TableColumn prefWidth="75.0" text="End Date" />

@@ -1,4 +1,4 @@
-package clickdummy;
+package clickdummy.rentals;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
