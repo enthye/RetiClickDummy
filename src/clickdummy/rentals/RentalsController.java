@@ -23,61 +23,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class RentalsController implements Initializable {
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		startDateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("StartDate"));
-		endDateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("EndDate"));
-		carColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Car"));
-		customerColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Customer"));
-		rentalRateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("RentalRate"));
-		
-		tableView.getItems().setAll(parseDummyRentals());
-		
-		tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-	}
 	
-	private List<Rental> parseDummyRentals() {
-		ObservableList<Rental> rentals = FXCollections.observableArrayList();
-		
-		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","John Doe","Good Rate"));
-		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","John Doe","Good Rate"));
-		rentals.add(new Rental("17/9/2018","24/9/2018","Nissan Leaf","Jane Doe","Bad Rate"));
-		
-		return rentals;
-	}
-
-	@FXML
-	private AnchorPane mainRoot;
-	
-    @FXML
-    private Button addButton;
-
-    @FXML
-    private Button deleteButton;
-
-    @FXML
-    private Button searchButton;
-
-    @FXML
-    private Button backButton;
-
-    @FXML
-    private TableView<Rental> tableView;
-        
-    @FXML
-    private TableColumn<Rental, String> startDateColumn;
-
-    @FXML
-    private TableColumn<Rental, String> endDateColumn;
-
-    @FXML
-    private TableColumn<Rental, String> customerColumn;
-
-    @FXML
-    private TableColumn<Rental, String> carColumn;
-
-    @FXML
-    private TableColumn<Rental, String> rentalRateColumn;
+	@FXML private AnchorPane mainRoot;
+    @FXML private Button addButton, deleteButton,searchButton,backButton;
+    @FXML private TableView<Rental> tableView;
+    @FXML private TableColumn<Rental, String> startDateColumn,
+    endDateColumn,customerColumn,carColumn,rentalRateColumn;
     
     @FXML
     private void addButtonPressed(ActionEvent event) {
@@ -111,5 +62,28 @@ public class RentalsController implements Initializable {
     void searchButtonPressed(ActionEvent event) {
 
     }
+    
+    @Override
+	public void initialize(URL location, ResourceBundle resources) {
+		startDateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("StartDate"));
+		endDateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("EndDate"));
+		carColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Car"));
+		customerColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Customer"));
+		rentalRateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("RentalRate"));
+		
+		tableView.getItems().setAll(parseDummyRentals());
+		
+		tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+	}
+	
+	private List<Rental> parseDummyRentals() {
+		ObservableList<Rental> rentals = FXCollections.observableArrayList();
+		
+		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","John Doe","Good Rate"));
+		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","John Doe","Good Rate"));
+		rentals.add(new Rental("17/9/2018","24/9/2018","Nissan Leaf","Jane Doe","Bad Rate"));
+		
+		return rentals;
+	}
 
 }
