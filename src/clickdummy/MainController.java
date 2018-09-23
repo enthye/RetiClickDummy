@@ -7,38 +7,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import utils.ChangeRootView;
 
 public class MainController {
 
-	@FXML
-	private AnchorPane mainRoot;
-	
-    @FXML
-    private Button rentalsButton;
-
-    @FXML
-    private Button customersButton;
+	@FXML private AnchorPane mainRoot;
+    @FXML private Button rentalsButton,customersButton;
+    private ChangeRootView crw = new ChangeRootView();
 
     @FXML
     private void customersButtonClicked(ActionEvent event) {
-    	AnchorPane practiseRoot = null;
-        try {
-            practiseRoot = FXMLLoader.load(getClass().getResource("/resources/Customers.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mainRoot.getChildren().setAll(practiseRoot);
+    	crw.changeRootView("/resources/Customers.fxml", mainRoot);
     }
 
     @FXML
     private void rentalsButtonClicked(ActionEvent event) {
-    	AnchorPane practiseRoot = null;
-        try {
-            practiseRoot = FXMLLoader.load(getClass().getResource("/resources/Rentals.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mainRoot.getChildren().setAll(practiseRoot);
+    	crw.changeRootView("/resources/Rentals.fxml", mainRoot);
     }
 
 }
