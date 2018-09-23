@@ -81,18 +81,14 @@ public class RentalsController implements Initializable {
     
     @FXML
     private void addButtonPressed(ActionEvent event) {
-    	Parent root = null;
+    	AnchorPane root = null;
     	
     	try {
 			root = FXMLLoader.load(getClass().getResource("/resources/RentalEntry.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-    	
-        Stage stage = new Stage();
-        stage.setTitle("New Rental");
-        stage.setScene(new Scene(root));
-        stage.show();
+    	mainRoot.getChildren().setAll(root);
     }
 
     @FXML
