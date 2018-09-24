@@ -14,13 +14,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import utils.ViewUtilities;
 
 public class RentalsController implements Initializable {
 	
@@ -30,37 +34,33 @@ public class RentalsController implements Initializable {
     @FXML private TableColumn<Rental, String> startDateColumn,
     endDateColumn,customerColumn,carColumn,rentalRateColumn;
     
+    private ViewUtilities crw = new ViewUtilities();
+    
     @FXML
-    private void addButtonPressed(ActionEvent event) {
-    	AnchorPane root = null;
-    	
-    	try {
-			root = FXMLLoader.load(getClass().getResource("/resources/RentalEntry.fxml"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    	mainRoot.getChildren().setAll(root);
+    private void addButtonPressed(ActionEvent event) {  	
+    	crw.changeRootView("/resources/RentalEntry.fxml", mainRoot);
     }
 
     @FXML
     private void backButtonPressed(ActionEvent event) {
-    	AnchorPane practiseRoot = null;
-        try {
-            practiseRoot = FXMLLoader.load(getClass().getResource("/resources/Main.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mainRoot.getChildren().setAll(practiseRoot);
+    	crw.changeRootView("/resources/Main.fxml", mainRoot);
     }
 
     @FXML
     void deleteButtonPressed(ActionEvent event) {
-
+    	Alert alert = new Alert(AlertType.CONFIRMATION,"Delete Rental made by <Customer>?");
+    	alert.showAndWait();
+    	
+    	if (alert.getResult() == ButtonType.OK) {
+    		// delete
+    	} else {
+    		// return
+    	}
     }
 
     @FXML
     void searchButtonPressed(ActionEvent event) {
-
+    	
     }
     
     @Override
@@ -80,7 +80,7 @@ public class RentalsController implements Initializable {
 		ObservableList<Rental> rentals = FXCollections.observableArrayList();
 		
 		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","John Doe","Good Rate"));
-		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","John Doe","Good Rate"));
+		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","Ah Name","Ok Rate"));
 		rentals.add(new Rental("17/9/2018","24/9/2018","Nissan Leaf","Jane Doe","Bad Rate"));
 		
 		return rentals;

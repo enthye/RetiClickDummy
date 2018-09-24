@@ -7,13 +7,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import utils.ChangeRootView;
+import utils.ViewUtilities;
 
 public class MainController {
 
 	@FXML private AnchorPane mainRoot;
     @FXML private Button rentalsButton,customersButton;
-    private ChangeRootView crw = new ChangeRootView();
+    private ViewUtilities crw = new ViewUtilities();
 
     @FXML
     private void customersButtonClicked(ActionEvent event) {
