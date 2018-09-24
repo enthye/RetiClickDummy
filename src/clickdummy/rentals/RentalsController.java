@@ -38,7 +38,7 @@ public class RentalsController implements Initializable {
     
     @FXML
     private void addButtonPressed(ActionEvent event) {  	
-    	crw.changeRootView("/resources/RentalEntry.fxml", mainRoot);
+    	crw.newWindowView("/resources/RentalEntry.fxml");
     }
 
     @FXML

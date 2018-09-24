@@ -1,7 +1,5 @@
 package clickdummy.rentals;
 
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,19 +17,14 @@ public class RentalEntryController {
 
 	@FXML
 	void addButtonPressed(ActionEvent event) {
-
+		Stage stage = (Stage) cancelButton.getScene().getWindow();
+	    stage.close();
 	}
 
 	@FXML
 	void cancelButtonPressed(ActionEvent event) {
-		AnchorPane root = null;
-
-		try {
-			root = FXMLLoader.load(getClass().getResource("/resources/Rentals.fxml"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		mainRoot.getChildren().setAll(root);
+		Stage stage = (Stage) cancelButton.getScene().getWindow();
+	    stage.close();
 	}
 
 }
