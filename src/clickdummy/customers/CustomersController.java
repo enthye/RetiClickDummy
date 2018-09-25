@@ -18,32 +18,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import utils.ViewUtilities;
 
 public class CustomersController implements Initializable {
 
-	@FXML
-    private AnchorPane mainRoot;
-	
-	@FXML
-	private TableView<Customer> tableView;
-
-	@FXML
-	private TableColumn<Customer, String> name;
-
-	@FXML
-	private TableColumn<Customer, String> address;
-
-	@FXML
-	private TableColumn<Customer, String> phoneNumber;
-
-	@FXML
-	private Button addButton;
-
-	@FXML
-	private Button modifyButton;
-
-	@FXML
-	private Button backButon;
+	@FXML private AnchorPane mainRoot;
+	@FXML private TableView<Customer> tableView;
+	@FXML private TableColumn<Customer, String> name,address,phoneNumber;
+	@FXML private Button addButton,modifyButton,backButon;
+	private ViewUtilities vu = new ViewUtilities();
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -68,22 +51,16 @@ public class CustomersController implements Initializable {
 
 	@FXML
 	void addButtonPressed(ActionEvent event) {
-
+		vu.changeRootView("/resources/CustomerEntry.fxml", mainRoot);
 	}
 
 	@FXML
 	void backButtonPressed(ActionEvent event) {
-		AnchorPane practiseRoot = null;
-		try {
-			practiseRoot = FXMLLoader.load(getClass().getResource("/resources/Main.fxml"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		mainRoot.getChildren().setAll(practiseRoot);
+		vu.changeRootView("/resources/Main.fxml", mainRoot);
 	}
 
 	@FXML
 	void modifyButtonPressed(ActionEvent event) {
-
+		vu.changeRootView("/resources/CustomerEntry.fxml", mainRoot);
 	}
 }

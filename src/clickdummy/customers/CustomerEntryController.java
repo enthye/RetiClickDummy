@@ -7,20 +7,8 @@ import javafx.scene.control.TextField;
 
 public class CustomerEntryController {
 
-	@FXML
-    private TextField addressField;
-
-    @FXML
-    private TextField phoneField;
-
-    @FXML
-    private TextField nameField;
-
-    @FXML
-    private Button addButton;
-
-    @FXML
-    private Button cancelButton;
+	@FXML private TextField addressField,phoneField,nameField;
+    @FXML private Button addButton,cancelButton;
 
     @FXML
     void addButtonPressed(ActionEvent event) {
