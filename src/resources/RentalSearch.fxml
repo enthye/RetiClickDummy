@@ -6,8 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RentalSearchController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clickdummy.rentals.RentalSearchController">
    <children>
       <Text layoutX="246.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rental Search">
          <font>
@@ -16,18 +15,20 @@
       </Text>
       <Button fx:id="searchButton" layoutX="192.0" layoutY="320.0" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="37.0" prefWidth="100.0" text="Search" />
       <Button fx:id="cancelButton" layoutX="328.0" layoutY="320.0" mnemonicParsing="false" onAction="#cancelButtonPressed" prefHeight="37.0" prefWidth="100.0" text="Cancel" />
-      <AnchorPane layoutX="156.0" layoutY="110.0" prefHeight="200.0" prefWidth="307.0">
+      <AnchorPane layoutX="156.0" layoutY="87.0" prefHeight="223.0" prefWidth="307.0">
          <children>
             <Text layoutX="36.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" />
             <Text layoutX="37.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car" wrappingWidth="31.707035064697266" />
             <Text layoutX="35.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date" />
             <Text layoutX="37.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date" />
-            <Text layoutX="38.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rental Rate" />
+            <Text layoutX="38.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rental Rate" />
             <TextField fx:id="startDateField" layoutX="145.0" layoutY="11.0" />
             <TextField fx:id="endDateField" layoutX="145.0" layoutY="47.0" />
             <TextField fx:id="customerField" layoutX="145.0" layoutY="80.0" />
             <TextField fx:id="carField" layoutX="145.0" layoutY="114.0" />
-            <TextField fx:id="rentalRateField" layoutX="145.0" layoutY="146.0" />
+            <TextField fx:id="rentalRateField" layoutX="145.0" layoutY="186.0" />
+            <TextField fx:id="carTypeField" layoutX="145.0" layoutY="150.0" />
+            <Text layoutX="37.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Type" wrappingWidth="48.076169192790985" />
          </children>
       </AnchorPane>
    </children>

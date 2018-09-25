@@ -12,10 +12,10 @@ public class RentalSearchController {
     @FXML private AnchorPane root;
     @FXML private Button searchButton,cancelButton;
     @FXML private TextField startDateField,endDateField,
-    customerField,carField,rentalRateField;
+    customerField,carField,carTypeField,rentalRateField;
 
     @FXML
-    void cancelButtonPressed(ActionEvent event) {
+    void cancelButtonPressed(sActionEvent event) {
     	Stage stage = (Stage) cancelButton.getScene().getWindow();
 	    stage.close();
     }
