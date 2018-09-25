@@ -33,17 +33,16 @@ public class RentalsController implements Initializable {
     @FXML private TableView<Rental> tableView;
     @FXML private TableColumn<Rental, String> startDateColumn,
     endDateColumn,customerColumn,carColumn,rentalRateColumn;
-    
-    private ViewUtilities crw = new ViewUtilities();
+    private ViewUtilities vu = new ViewUtilities();
     
     @FXML
     private void addButtonPressed(ActionEvent event) {  	
-    	crw.newWindowView("/resources/RentalEntry.fxml");
+    	vu.newWindowView("/resources/RentalEntry.fxml");
     }
 
     @FXML
     private void backButtonPressed(ActionEvent event) {
-    	crw.changeRootView("/resources/Main.fxml", mainRoot);
+    	vu.changeRootView("/resources/Main.fxml", mainRoot);
     }
 
     @FXML
@@ -60,28 +59,27 @@ public class RentalsController implements Initializable {
 
     @FXML
     void searchButtonPressed(ActionEvent event) {
-    	
+    	vu.changeRootView("/resources/RentalSearch.fxml", mainRoot);
     }
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
 		startDateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("StartDate"));
 		endDateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("EndDate"));
-		carColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Car"));
 		customerColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Customer"));
+		carColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Car"));
 		rentalRateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("RentalRate"));
 		
 		tableView.getItems().setAll(parseDummyRentals());
-		
 		tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 	}
 	
 	private List<Rental> parseDummyRentals() {
 		ObservableList<Rental> rentals = FXCollections.observableArrayList();
 		
-		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","John Doe","Good Rate"));
-		rentals.add(new Rental("17/9/2018","24/9/2018","Tesla Model S","Ah Name","Ok Rate"));
-		rentals.add(new Rental("17/9/2018","24/9/2018","Nissan Leaf","Jane Doe","Bad Rate"));
+		rentals.add(new Rental("17/9/2018","24/9/2018","John Doe","Sports: Tesla Model S","Good Rate"));
+		rentals.add(new Rental("17/9/2018","24/9/2018","Ah Name","Sports: Tesla Model S","Ok Rate"));
+		rentals.add(new Rental("17/9/2018","24/9/2018","Jane Doe","Passenger: Nissan Leaf","Bad Rate"));
 		
 		return rentals;
 	}
