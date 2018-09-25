@@ -15,7 +15,7 @@ public class RentalSearchController {
     customerField,carField,carTypeField,rentalRateField;
 
     @FXML
-    void cancelButtonPressed(sActionEvent event) {
+    void cancelButtonPressed(ActionEvent event) {
     	Stage stage = (Stage) cancelButton.getScene().getWindow();
 	    stage.close();
     }
