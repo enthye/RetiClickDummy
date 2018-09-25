@@ -35,7 +35,6 @@ public class CustomersController implements Initializable {
 		phoneNumber.setCellValueFactory(new PropertyValueFactory<Customer,String>("PhoneNumber"));
 		
 		tableView.getItems().setAll(parseDummyCustomers());
-		
 		tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 	}
 	
