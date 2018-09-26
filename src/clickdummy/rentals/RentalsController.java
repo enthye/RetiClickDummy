@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import clickdummy.customers.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
@@ -48,14 +49,15 @@ public class RentalsController implements Initializable {
 
     @FXML
     void deleteButtonPressed(ActionEvent event) {
-    	Alert alert = new Alert(AlertType.CONFIRMATION,"Delete Rental made by <Customer>?");
-    	alert.showAndWait();
+    	Rental rental = tableView.getSelectionModel().getSelectedItem();
+		if (rental != null) {
+			Alert alert = new Alert(AlertType.CONFIRMATION,"Delete Rental made by <Customer>?");
+	    	alert.showAndWait();
+		} else {
+			Alert alert = new Alert(AlertType.ERROR,"No rental selected");
+	    	alert.showAndWait();
+		}
     	
-    	if (alert.getResult() == ButtonType.OK) {
-    		// delete
-    	} else {
-    		// return
-    	}
     }
 
     @FXML
