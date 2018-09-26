@@ -22,7 +22,7 @@ public class RentalSearchController {
 
     @FXML
     void searchButtonPressed(ActionEvent event) {
-    	Stage stage = (Stage) cancelButton.getScene().getWindow();
+    	Stage stage = (Stage) searchButton.getScene().getWindow();
 	    stage.close();
     }
 

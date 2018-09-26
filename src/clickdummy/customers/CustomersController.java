@@ -39,13 +39,11 @@ public class CustomersController implements Initializable {
 	}
 	
 	private List<Customer> parseDummyCustomers() {
-		ObservableList<Customer> rentals = FXCollections.observableArrayList();
+		ObservableList<Customer> customers = FXCollections.observableArrayList();
 		
-		rentals.add(new Customer("Adam Apples","Eden Garden","1"));
-		rentals.add(new Customer("Bob Burgers","Fake Street","123 4567"));
-		rentals.add(new Customer("Coca Cola","Pepsi Lane","987 6543"));
+		customers.add(new Customer("Adam Apples","123 4567","Eden Garden"));
 		
-		return rentals;
+		return customers;
 	}
 
 	@FXML
