@@ -12,6 +12,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -58,6 +60,13 @@ public class CustomersController implements Initializable {
 
 	@FXML
 	void modifyButtonPressed(ActionEvent event) {
-		vu.newWindowView("/resources/CustomerEntry.fxml");
+		Customer customer = tableView.getSelectionModel().getSelectedItem();
+		if (customer != null) {
+			vu.newWindowView("/resources/ModifyEntry.fxml");
+		} else {
+			Alert alert = new Alert(AlertType.ERROR,"No customer selected");
+			alert.showAndWait();
+		}
+		
 	}
 }
