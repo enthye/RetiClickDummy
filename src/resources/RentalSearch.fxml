@@ -24,7 +24,7 @@
             <Text layoutX="38.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rental Rate" />
             <TextField fx:id="startDateField" layoutX="145.0" layoutY="11.0" />
             <TextField fx:id="endDateField" layoutX="145.0" layoutY="47.0" />
-            <TextField fx:id="customerField" layoutX="145.0" layoutY="80.0" />
+            <TextField fx:id="customerField" layoutX="145.0" layoutY="80.0" text="John" />
             <TextField fx:id="carField" layoutX="145.0" layoutY="114.0" />
             <TextField fx:id="rentalRateField" layoutX="145.0" layoutY="186.0" />
             <TextField fx:id="carTypeField" layoutX="145.0" layoutY="150.0" />

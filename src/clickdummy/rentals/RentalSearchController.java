@@ -21,7 +21,7 @@ public class RentalSearchController {
     }
 
     @FXML
-    void searchButtonPressed(ActionEvent event) { 	
+    void searchButtonPressed(ActionEvent event) {
     	Stage stage = (Stage) cancelButton.getScene().getWindow();
 	    stage.close();
     }

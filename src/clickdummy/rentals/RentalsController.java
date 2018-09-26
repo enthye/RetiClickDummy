@@ -34,6 +34,7 @@ public class RentalsController implements Initializable {
     @FXML private TableColumn<Rental, String> startDateColumn,
     endDateColumn,customerColumn,carColumn,rentalRateColumn;
     private ViewUtilities vu = new ViewUtilities();
+    private List<Rental> dummyList;
     
     @FXML
     private void addButtonPressed(ActionEvent event) {  	
@@ -59,7 +60,8 @@ public class RentalsController implements Initializable {
 
     @FXML
     void searchButtonPressed(ActionEvent event) {
-    	vu.changeRootView("/resources/RentalSearch.fxml", mainRoot);
+    	dummySearch();
+    	vu.newWindowView("/resources/RentalSearch.fxml");
     }
     
     @Override
@@ -70,7 +72,8 @@ public class RentalsController implements Initializable {
 		carColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("Car"));
 		rentalRateColumn.setCellValueFactory(new PropertyValueFactory<Rental,String>("RentalRate"));
 		
-		tableView.getItems().setAll(parseDummyRentals());
+		dummyList = parseDummyRentals();
+		tableView.getItems().setAll(dummyList);
 		tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 	}
 	
@@ -82,6 +85,12 @@ public class RentalsController implements Initializable {
 		rentals.add(new Rental("17/9/2018","24/9/2018","Jane Doe","Passenger: Nissan Leaf","Bad Rate"));
 		
 		return rentals;
+	}
+	
+	private void dummySearch() {
+		dummyList.clear();
+		dummyList.add(new Rental("17/9/2018","24/9/2018","John Doe","Sports: Tesla Model S","Good Rate"));
+		tableView.getItems().setAll(dummyList);
 	}
 
 }

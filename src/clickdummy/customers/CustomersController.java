@@ -50,7 +50,7 @@ public class CustomersController implements Initializable {
 
 	@FXML
 	void addButtonPressed(ActionEvent event) {
-		vu.changeRootView("/resources/CustomerEntry.fxml", mainRoot);
+		vu.newWindowView("/resources/CustomerEntry.fxml");
 	}
 
 	@FXML
@@ -60,6 +60,6 @@ public class CustomersController implements Initializable {
 
 	@FXML
 	void modifyButtonPressed(ActionEvent event) {
-		vu.changeRootView("/resources/CustomerEntry.fxml", mainRoot);
+		vu.newWindowView("/resources/CustomerEntry.fxml");
 	}
 }
